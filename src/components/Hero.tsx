@@ -22,7 +22,7 @@ export function Navbar() {
         <a href="#inicio" className="flex items-center gap-2.5">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-lg shadow-blue-900/10 ring-1 ring-white/50">
             <img
-              src="/images/rapidinho-logo-mark.png"
+              src="images/rapidinho-logo-mark.png"
               alt=""
               className="h-8 w-8 object-contain"
             />
@@ -98,25 +98,25 @@ export function Navbar() {
 
 const FLOATING_CARDS = [
   {
-    img: "/images/geladeira.png",
+    img: "images/geladeira.png",
     label: "Geladeiras",
     anim: "animate-float",
     tilt: "-4deg",
   },
   {
-    img: "/images/maquina-lavar.png",
+    img: "images/maquina-lavar.png",
     label: "Máquinas de Lavar",
     anim: "animate-float-delay",
     tilt: "3deg",
   },
   {
-    img: "/images/ar-condicionado.png",
+    img: "images/ar-condicionado.png",
     label: "Ar Condicionado",
     anim: "animate-float-delay-2",
     tilt: "-3deg",
   },
   {
-    img: "/images/televisao.png",
+    img: "images/televisao.png",
     label: "Televisões",
     anim: "animate-float-delay-3",
     tilt: "4deg",

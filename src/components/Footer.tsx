@@ -15,7 +15,7 @@ export function Footer() {
             <div className="flex items-center gap-2.5">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-lg shadow-blue-950/20">
                 <img
-                  src="/images/rapidinho-logo-mark.png"
+                  src="images/rapidinho-logo-mark.png"
                   alt=""
                   className="h-8 w-8 object-contain"
                 />

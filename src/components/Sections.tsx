@@ -363,7 +363,7 @@ export function QuoteForm() {
 
         <div className="order-1 overflow-hidden rounded-[2.5rem] bg-white lg:order-2">
           <img
-            src="/images/rapidinho-whatsapp-phone-appliances.png"
+            src="images/rapidinho-whatsapp-phone-appliances.png"
             alt="Atendimento pelo WhatsApp"
             className="aspect-[16/10] w-full object-cover"
             loading="lazy"
@@ -456,7 +456,7 @@ export function Coverage() {
 
         <div className="order-1 overflow-hidden rounded-[2.4rem] bg-sky-50 shadow-2xl shadow-blue-900/10 ring-1 ring-sky-100 lg:order-2">
           <img
-            src="/images/rapidinho-coverage-map-van.png"
+            src="images/rapidinho-coverage-map-van.png"
             alt="Rota de atendimento em Goiânia e região"
             className="aspect-[4/3] w-full object-cover"
             loading="lazy"
