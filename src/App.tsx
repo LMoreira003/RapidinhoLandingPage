@@ -1,12 +1,5 @@
 import { Hero, Navbar } from "./components/Hero";
-import {
-  About,
-  Advantages,
-  Coverage,
-  QuoteForm,
-  Services,
-  Testimonials,
-} from "./components/Sections";
+import { About, Coverage, QuoteForm } from "./components/Sections";
 import { FloatingButtons, Footer } from "./components/Footer";
 
 export default function App() {
@@ -16,11 +9,8 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Services />
-        <Advantages />
-        <QuoteForm />
-        <Testimonials />
         <Coverage />
+        <QuoteForm />
       </main>
       <Footer />
       <FloatingButtons />

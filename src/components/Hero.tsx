@@ -1,20 +1,5 @@
 import { useEffect, useState } from "react";
-import { PHONE_MAIN, PHONE_MAIN_RAW, WHATSAPP_LINK } from "../data";
-
-function SnowflakeIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-    >
-      <path d="M12 2v20M4 6l16 12M20 6L4 18M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5" />
-    </svg>
-  );
-}
+import { PHONE_MAIN, PHONE_MAIN_RAW, REVIEWS, WHATSAPP_LINK } from "../data";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,14 +20,12 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#inicio" className="flex items-center gap-2.5">
-          <span
-            className={`flex h-10 w-10 items-center justify-center rounded-xl shadow-lg transition-colors ${
-              scrolled
-                ? "bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-sky-200"
-                : "bg-white/20 text-white shadow-transparent backdrop-blur-sm"
-            }`}
-          >
-            <SnowflakeIcon className="h-5 w-5" />
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-lg shadow-blue-900/10 ring-1 ring-white/50">
+            <img
+              src="/images/rapidinho-logo-mark.png"
+              alt=""
+              className="h-8 w-8 object-contain"
+            />
           </span>
           <span className="leading-tight">
             <span
@@ -57,7 +40,7 @@ export function Navbar() {
                 scrolled ? "text-slate-500" : "text-sky-100"
               }`}
             >
-              Refrigeração &amp; Linha Branca
+              Refrigerações
             </span>
           </span>
         </a>
@@ -65,9 +48,8 @@ export function Navbar() {
         <nav className="hidden items-center gap-8 md:flex">
           {[
             ["Início", "#inicio"],
-            ["Serviços", "#servicos"],
             ["Quem Somos", "#quem-somos"],
-            ["Avaliações", "#avaliacoes"],
+            ["Área", "#area-atendimento"],
             ["Contato", "#orcamento"],
           ].map(([label, href]) => (
             <a
@@ -140,6 +122,25 @@ const FLOATING_CARDS = [
     tilt: "4deg",
   },
 ];
+
+const HERO_REVIEW_LOOP = [...REVIEWS, ...REVIEWS];
+
+function ReviewStars({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className="flex gap-0.5 text-amber-300">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg
+          key={i}
+          className={compact ? "h-3.5 w-3.5" : "h-4 w-4"}
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
 
 export function Hero() {
   return (
@@ -250,8 +251,36 @@ export function Hero() {
           ))}
         </div>
 
+        <div className="relative z-10 mt-8 sm:hidden">
+          <div className="mx-auto mb-3 flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-xs font-black text-white shadow-lg shadow-blue-900/10 backdrop-blur-md">
+            <ReviewStars compact />
+            <span>4,8 no Google</span>
+          </div>
+
+          <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
+            <div className="hero-review-track-mobile">
+              {HERO_REVIEW_LOOP.map((review, index) => (
+                <figure
+                  key={`${review.name}-mobile-${index}`}
+                  className="w-[300px] shrink-0 rounded-2xl bg-white/95 px-4 py-3 text-left shadow-lg shadow-blue-950/10"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <ReviewStars compact />
+                    <span className="text-xs font-black text-sky-600">
+                      {review.name}
+                    </span>
+                  </div>
+                  <blockquote className="review-copy mt-1 text-xs font-bold leading-5 text-slate-600">
+                    “{review.text}”
+                  </blockquote>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* rating badge */}
-        <div className="mt-14 flex flex-col items-center gap-2">
+        <div className="sr-only">
           <div className="flex gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
               <svg
@@ -268,6 +297,47 @@ export function Hero() {
             Avaliação <strong className="text-white">4,8</strong> no Google —
             clientes 100% satisfeitos
           </p>
+        </div>
+      </div>
+
+      <span
+        id="avaliacoes"
+        className="pointer-events-none absolute bottom-36 left-0 h-px w-px"
+        aria-hidden="true"
+      />
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-7 z-20 hidden sm:block">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mx-auto mb-3 flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-xs font-black text-white shadow-lg shadow-blue-900/10 backdrop-blur-md">
+            <ReviewStars compact />
+            <span>4,8 no Google</span>
+          </div>
+
+          <div className="overflow-hidden rounded-[2rem] border border-white/25 bg-white/12 py-3 shadow-2xl shadow-blue-900/15 backdrop-blur-md [mask-image:linear-gradient(to_right,transparent,black_9%,black_91%,transparent)]">
+            <div className="hero-review-track">
+              {HERO_REVIEW_LOOP.map((review, index) => (
+                <figure
+                  key={`${review.name}-curve-${index}`}
+                  className="flex w-[360px] shrink-0 items-center gap-4 rounded-2xl bg-white px-4 py-3 text-slate-900 shadow-xl shadow-blue-950/10"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-blue-600 text-sm font-black text-white">
+                    {review.name.charAt(0)}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <ReviewStars compact />
+                      <span className="text-xs font-black text-slate-900">
+                        {review.name}
+                      </span>
+                    </div>
+                    <blockquote className="mt-1 truncate text-xs font-bold text-slate-500">
+                      “{review.text}”
+                    </blockquote>
+                  </div>
+                </figure>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

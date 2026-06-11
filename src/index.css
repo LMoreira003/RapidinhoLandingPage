@@ -44,6 +44,15 @@ body {
   }
 }
 
+@keyframes review-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-float {
   animation: float-slow 6s ease-in-out infinite;
 }
@@ -78,4 +87,35 @@ body {
 }
 .delay-400 {
   animation-delay: 0.4s;
+}
+
+.hero-review-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: review-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.hero-review-track-mobile {
+  display: flex;
+  width: max-content;
+  gap: 0.6rem;
+  animation: review-marquee 36s linear infinite;
+  contain: layout paint;
+  will-change: transform;
+}
+
+.review-copy {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-review-track,
+  .hero-review-track-mobile {
+    animation: none;
+  }
 }

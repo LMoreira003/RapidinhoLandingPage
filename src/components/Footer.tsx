@@ -13,17 +13,19 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
-                  <path d="M12 2v20M4 6l16 12M20 6L4 18M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5" />
-                </svg>
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-lg shadow-blue-950/20">
+                <img
+                  src="/images/rapidinho-logo-mark.png"
+                  alt=""
+                  className="h-8 w-8 object-contain"
+                />
               </span>
               <span>
                 <span className="block text-sm font-extrabold text-white">
-                  Refrigeração Rapidinho Resolve
+                  Rapidinho Resolve
                 </span>
                 <span className="block text-[11px] text-slate-500">
-                  Geladeira • Máquina de Lavar • TVs
+                  Refrigerações
                 </span>
               </span>
             </div>
