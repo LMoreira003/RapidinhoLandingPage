@@ -1,6 +1,7 @@
 import {
   MAPS_LINK,
   PHONE_MAIN,
+  PHONE_MAIN_RAW,
   WHATSAPP_LINK,
 } from "../data";
 
@@ -345,7 +346,7 @@ export function QuoteForm() {
               <ArrowIcon className="h-4 w-4" />
             </a>
             <a
-              href="tel:+5562991219838"
+              href={`tel:+${PHONE_MAIN_RAW}`}
               className="inline-flex items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-black text-slate-900 shadow-lg shadow-slate-900/5 transition-colors hover:bg-slate-50"
             >
               <svg

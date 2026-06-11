@@ -1,6 +1,6 @@
 export const WHATSAPP_NUMBER = "5562991334342";
-export const PHONE_MAIN = "(62) 9 9121-9838";
-export const PHONE_MAIN_RAW = "5562991219838";
+export const PHONE_MAIN = "(62) 9 9133-4342";
+export const PHONE_MAIN_RAW = "5562991334342";
 export const PHONE_WHATS = "(62) 9 9133-4342";
 
 export const WHATSAPP_MESSAGE =
